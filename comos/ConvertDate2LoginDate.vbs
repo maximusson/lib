@@ -10,6 +10,7 @@ Output "Login Date (output): " & vbTab & intLoginDate
 
 Function ConvertDate2LoginDate(intDate)
 'DESCRIPTION: Converts a microsoft date to comos date (special COMOS date type in sql table)
+'no guarantee for correctness =)
 
 'REVISIONS:
 '(1) 30-April-2020 - created
