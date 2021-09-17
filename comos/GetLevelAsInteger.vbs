@@ -1,7 +1,7 @@
 'example:
 Output GetLevelAsInteger(a)
 
-Function GetLevelAsInteger(objComos)
+Function GetLevelAsInteger(ByVal objComos)
 ' DESCRIPTION: returns level of comos object in tree
 
 	GetLevelAsInteger = 0
