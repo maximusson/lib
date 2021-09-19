@@ -1,7 +1,7 @@
 'example:
-Call CreateExcelFile("C://temp.xlsx")
+Call CreateNewExcelFile("C://temp.xlsx")
 
-Sub CreateExcelFile(strExcelPath)
+Sub CreateNewExcelFile(strExcelPath)
 	Set objExcel = CreateObject("Excel.Application")
 	objExcel.Application.DisplayAlerts = False
 	Set objWorkbook=objExcel.workbooks.add()
