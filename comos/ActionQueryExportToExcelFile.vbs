@@ -31,6 +31,16 @@ Sub ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 		Next
 	Next
 	
+	' formation
+	sheet.Cells.EntireColumn.AutoFit
+	sheet.Cells.EntireRow.AutoFit
+	sheet.Rows("1:1").Font.Bold = true
+	sheet.Rows("1:1").Font.ThemeColor = 1
+	sheet.Rows("1:1").Interior.ThemeColor = 5
+	sheet.Rows("1:1").AutoFilter
+	sheet.Cells(2,1).Select
+	excelApp.ActiveWindow.FreezePanes = true
+	
 	' save and close excel file
 	'excelFile.saved = true 'close without saving, without prompt
 	excelFile.save
