@@ -1,4 +1,4 @@
-Sub CreateExcelSheet(strExcelPath, strSheetName)
+Sub CreateNewExcelSheet(strExcelPath, strSheetName)
 ' DESCRIPTION: opens given excel file and adds sheet
 
 	Set fso = CreateObject("Scripting.FileSystemObject")
@@ -18,8 +18,9 @@ Sub CreateExcelSheet(strExcelPath, strSheetName)
 	
 	' add if sheet does not exist
 	If bSheetExists = false Then
-		Set objNewSheet = excelFile.sheets.add
-		objNewSheet.Name = strSheetName
+		excelFile.Sheets.Add(,excelFile.Sheets(excelFile.Sheets.Count)).Name = strSheetName
+		'Set objNewSheet = excelFile.sheets.add
+		'objNewSheet.Name = strSheetName
 	End If
 	
 	' save and close excel file
