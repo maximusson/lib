@@ -6,11 +6,11 @@ Sub ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 	
 	' open excel file
 	Set excelApp = CreateObject("Excel.Application")
-	Set excelFile = excelApp.Workboosk.Open(strExcelpath)
+	Set excelFile = excelApp.Workbooks.Open(strExcelpath)
 	Set sheet = excelFile.Sheets(1)
 	sheet.name = strSheetName
-	
-    ' get COMOS query information
+
+	' fill in data in excel file
 	Set colColumns = Query.BaseQuery.Columns
 	intRowCount = Query.RowCount
 	intColumnCount = colColumns.count
@@ -32,7 +32,8 @@ Sub ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 	Next
 	
 	' save and close excel file
-	excelFile.saved = true
+	'excelFile.saved = true 'close without saving, without prompt
+	excelFile.save
 	excelFile.close
 	excelApp.quit
 	Set excelApp = Nothing
