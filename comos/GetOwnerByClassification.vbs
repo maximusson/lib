@@ -6,7 +6,7 @@ bolCheckStartObjectItself = true
 Set objOwner = GetOwnerByClassification(intSearchKey, strSearchClassification, objStart, bolCheckStartObjectItself)
 
 
-Function GetOwnerByClassification(intSearchKey, strSearchClassification, objStart, bolCheckStartObjectItself)
+Function GetOwnerByClassification(intSearchKey, strSearchClassification, ByVal objStart, bolCheckStartObjectItself)
 ' DESCRIPTION : searches owner by classfication and returns it if found - otherwise nothing
 
 ' SCRIPT REVISIONS :
