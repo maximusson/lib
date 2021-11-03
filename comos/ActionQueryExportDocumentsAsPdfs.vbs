@@ -12,7 +12,7 @@ Sub Action(Query, QueryBrowser)
 					If objOrgDoc Is Nothing Then Set objOrgDoc = objDoc
 					If objOrgDoc.DocumentType.Name <> "Reference" then
 						counter = counter + 1
-						colDocs.Add counter, objDoc
+						colDocs.Add counter, objOrgDoc
 					End If
 				End If
 			End If
