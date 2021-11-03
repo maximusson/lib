@@ -24,7 +24,7 @@ Sub Action(Query, QueryBrowser)
 End Sub
 
  
-  Sub ActionQueryExportDocumentsAsPdfs(colDocs)
+Sub ActionQueryExportDocumentsAsPdfs(colDocs)
 ' DESCRIPTION: gets a collection of documents as dictionary. key is incremented integer starting from 1, value is objDoc
 ' folderpath for pdfs is on user's desktop
 	
