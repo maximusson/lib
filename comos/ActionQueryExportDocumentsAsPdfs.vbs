@@ -6,15 +6,10 @@ Sub Action(Query, QueryBrowser)
 		Set Cell = Query.Cell(i, "Object")
 		If Not Cell Is Nothing Then
 			Set objDoc = Cell.Object
-			If Not objDoc Is Nothing Then
-				If objDoc.SystemType = 29 Then
-					Set objOrgDoc = objDoc.OrgDocument
-					If objOrgDoc Is Nothing Then Set objOrgDoc = objDoc
-					If objOrgDoc.DocumentType.Name <> "Reference" then
-						counter = counter + 1
-						colDocs.Add counter, objOrgDoc
-					End If
-				End If
+			Set objOrgDoc = GetOrgDocument(objDoc)
+			If Not objOrgDoc Is Nothing Then
+				counter = counter + 1
+				colDocs.Add counter, objOrgDoc
 			End If
 		End If
 	Next
@@ -23,6 +18,28 @@ Sub Action(Query, QueryBrowser)
 	
 End Sub
 
+	
+Function GetOrgDocument(objDoc)
+' DESCRIPTION: return orginial document
+	
+	Set GetOrgDocument = Nothing
+	
+	' basic checks
+	If objDoc Is Nothing Then Exit Function
+	If objDoc.SystemType <> 29 Then Exit Function
+	
+	' get org document
+	Set objOrgDoc = objDoc.OrgDocument
+	If objOrgDoc Is Nothing Then Set objOrgDoc = objDoc
+	
+	' check if objOrgDoc could not be found, due to missing reference
+	If objOrgDoc.DocumentType.Name = "Reference" Then Exit Function
+	
+	' return
+	Set GetOrgDocument = objOrgDoc
+	
+End Function
+	
  
 Sub ActionQueryExportDocumentsAsPdfs(colDocs)
 ' DESCRIPTION: gets a collection of documents as dictionary. key is incremented integer starting from 1, value is objDoc
