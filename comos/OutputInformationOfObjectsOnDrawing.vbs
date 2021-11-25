@@ -1,7 +1,8 @@
 Set GC = CreateObject("ComosROUtilities.GlobalCastings")
 
 Set objDoc = a
-objDoc.Report.open
+' objDoc.Report.Open
+objDoc.Report.OpenReadOnly True
 
 Set objDocRep = objDoc.Report.ReportDocument
 
