@@ -42,7 +42,7 @@ Sub ActionQueryExportToTxtFile(Query, strExportPath)
 				end if
 			End If
 		Next
-		objFile.WriteLine strHeader
+		objFile.WriteLine strRow
 	Next
 	
 	' close file
