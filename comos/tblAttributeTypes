@@ -1,0 +1,18 @@
+number	description (de)	controltype
+1	Beschreibung	ComosSUIEdit.SUIEdit
+2	Bildauswahl	ComosSUIImage.SUIImage
+3	Checkbox	ComosSUICheck.SUICheck
+4	Dateiauswahl	ComosSUIFOpen.SUIFOpen
+5	Datum	ComosSUIDate.SUIDate
+6	Edit: [Min Max]	ComosSUIEdit.SUIEdit
+7	Edit: [Min Value Max]	ComosSUIEdit.SUIEdit
+8	Eingabefeld	ComosSUIEdit.SUIEdit
+9	Liste	ComosSUIList.SUIList
+10	Memofeld (ASCII)	ComosSUIMemo.SUIMemo
+11	Memofeld (RTF)	ComosSUIRtf.SUIRtf
+12	Objektabfrage	ComosSUIQuery.SUIQuery
+13	Rahmen	ComosSUIBorder.SUIBorder
+14	Repeater	ComosSUIRepeater.SUIRepeater
+15	Schaltfläche	ComosSUIButton.SUIButton
+16	Unterschrift	ComosSUISignature.SUISignature
+17	Verweis	ComosSUILink.SUILink
