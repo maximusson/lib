@@ -2,6 +2,8 @@
 Set listFilepaths = CreateObject("System.Collections.Arraylist")
 listFilepaths.add "C:\test1.pdf"
 listFilepaths.add "C:\test2.pdf"
+strFilepath = "C:\merged.pdf"
+Output MergePdfFiles(listFilepaths, strFilepath)
 
 
 Function MergePdfFiles(listFilepaths, strFilepath)
