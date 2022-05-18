@@ -10,5 +10,6 @@ Function MAX_JOIN(rngInput, strSeparator)
         strText = objCell.Text
         MAX_JOIN = MAX_JOIN & strText & strSeparator
     Next
+    MAX_JOIN = left(MAX_JOIN, len(MAX_JOIN) - len(strSeparator))
 
 End Function
