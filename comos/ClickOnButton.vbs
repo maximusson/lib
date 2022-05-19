@@ -1,8 +1,8 @@
 ' EXAMPLE :
-Set objAttr = a
-bClicked = ClickOnButton(objAttr)
+Set objAttribute = a
+bClicked = ClickOnButton(objAttribute)
 
-Function ClickOnButton(objAttr)
+Function ClickOnButton(objAttribute)
 ' DESCRIPTION : simulates a click on a button in COMOS gui
    
 ' SCRIPT REVISIONS :
@@ -10,7 +10,7 @@ Function ClickOnButton(objAttr)
 ' 2 : 19-May-2022 : beautify
    
 ' INPUT :
-' (1) objComos: object from comos tree - [comos object]
+	' (1) objComos: object from comos tree - [comos attribute object]
    
 ' OUTPUT :
 ' (1) ClickOnButton: returns true if script ran completely [boolean]
