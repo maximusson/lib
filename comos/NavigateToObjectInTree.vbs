@@ -1,4 +1,4 @@
-'Example:
+' EXAMPLE :
 Set objComos = a
 Output NavigateToObjectInComosTree(a)
 
@@ -12,14 +12,15 @@ Function NavigateToObjectInComosTree(objComos)
 ' (1) objComos: object from comos tree - [comos object]
 
 ' OUTPUT :
-' (1) returns true if script ran completely [boolean]
-    NavigateToObjectInComosTree = false
+' (1) NavigateToObjectInComosTree: returns true if script ran completely [boolean]
+	
+	NavigateToObjectInComosTree = false
 
-    If objComos Is Nothing Then Exit Function
+ 	If objComos Is Nothing Then Exit Function
 
-    Set objNavi = Project.Workset.Globals.NAVIGATOR
-    objNavi.pltObject = objComos
+ 	Set objNavi = Project.Workset.Globals.NAVIGATOR
+ 	objNavi.pltObject = objComos
 
-    NavigateToObjectInComosTree = true
+ 	NavigateToObjectInComosTree = true
 
 End Function
