@@ -16,22 +16,22 @@ Function GetDereferencedCDevice(objComos)
 
 	Set GetDereferencedCDevice = Nothing
 	If objComos Is Nothing Then Exit Function
-	Set objCDev = Nothing
+	Set objCDevice = Nothing
 
 	Select Case objComos.SystemType
 	Case 8
 		' Device
-		Set objCDev = objComos.CDevice
+		Set objCDevice = objComos.CDevice
 	Case 13
 		' CDevice
-		Set objCDev = objComos
+		Set objCDevice = objComos
 	Case Else
 		Exit Function
 	End Select
 
-	If objCDev Is Nothing Then Exit Function
+	If objCDevice Is Nothing Then Exit Function
    
-	Set GetDereferencedCDevice = objCDev
+	Set GetDereferencedCDevice = objCDevice
 	Do While Not GetDereferencedCDevice.CDevice Is Nothing
 		Set GetDereferencedCDevice = GetDereferencedCDevice.CDevice
 	Loop
