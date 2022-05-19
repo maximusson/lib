@@ -29,6 +29,6 @@ Function AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
 	objNewFilter.Value = strFilterValue
 	objNewFilter.Operator = 9
          
-			OpenQueryWindow = true 
+	OpenQueryWindow = true 
          
 End Function
