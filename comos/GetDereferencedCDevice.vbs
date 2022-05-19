@@ -6,7 +6,7 @@ Function GetDereferencedCDevice(objComos)
 ' DESCRIPTION: returns the very end of cdevices
 
 ' VERSIONS:
-' 1 : 18-May-2022 : created
+' (1) 18-May-2022 : created
 
 ' INPUTS:
 ' (1) objComos: comos object of systemtype 8 or 13 [comos object]
@@ -26,7 +26,7 @@ Function GetDereferencedCDevice(objComos)
 		' CDevice
 		Set objCDev = objComos
 	Case Else
-		exit Function
+		Exit Function
 	End Select
 
 	If objCDev Is Nothing Then Exit Function
