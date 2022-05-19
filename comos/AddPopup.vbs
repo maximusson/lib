@@ -25,7 +25,7 @@ Function AddPopup(Popup, strContextText, strContextID)
 ' (1) AddPopup: returns true if script ran completely [boolean]
 
  	AddPopup = false
-    Popup.add strContextText, strContextID
-    AddPopup = true
+ 	Popup.add strContextText, strContextID
+ 	AddPopup = true
 
 End Function
