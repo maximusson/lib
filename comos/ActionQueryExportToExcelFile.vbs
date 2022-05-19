@@ -3,11 +3,11 @@ Sub Action(Query, QueryBrowser)
 	' EXAMPLE :
 	strExcelPath = "C:\export.xlsx"
 	strSheetName = "New sheet"
-	Call ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
+	bExported = ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 	
 End Sub
 
-Sub ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
+Function ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 ' DESCRIPTION: exports visible data from COMOS query to new excel file. If file already exists, COMOS cancels export
 
 ' SCRIPT REVISIONS :
@@ -20,12 +20,14 @@ Sub ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 ' (3) strSheetName: name for new excel sheet - [string]
 	
 ' OUTPUT :
-' () nothing
+' (1) ActionQueryExportToExcelFile: true if script ran completely [boolean]
+	
+	ActionQueryExportToExcelFile = false
 	
 	Set fso = CreateObject("Scripting.FileSystemObject")
-	If strExcelPath = "" Then Exit Sub
-	If strSheetName = "" Then Exit Sub
-	If fso.FileExists(strExcelPath) = false Then Exit Sub
+	If strExcelPath = "" Then Exit Function
+	If strSheetName = "" Then Exit Function
+	If fso.FileExists(strExcelPath) = false Then Exit Function
 	
 	' open excel file
 	Set excelApp = CreateObject("Excel.Application")
@@ -71,4 +73,6 @@ Sub ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 	excelApp.quit
 	Set excelApp = Nothing
 
-End Sub
+	ActionQueryExportToExcelFile = true	
+	
+End Function
