@@ -1,5 +1,5 @@
 'example
-Set objNewAttr = CreateNewAttribute(c, "Z00A00001", "New Attribute")
+Set objNewAttribute = CreateNewAttribute(c, "Z00A00001", "New Attribute")
 
 Function CreateNewAttribute(objCDev, strName, strDescription)
 ' DESCRIPTION : creates new attribute on a base object
@@ -23,9 +23,9 @@ Function CreateNewAttribute(objCDev, strName, strDescription)
 	Set colSpec = objCDev.OwnSpecifications
 	If colSpec.ItemExist(strName) Then Exit Function
 
-	Set objAttr = colSpec.CreateNewWithName(strName)
-	objAttr.Description = strDescription	
+	Set objAttribute = colSpec.CreateNewWithName(strName)
+	objAttribute.Description = strDescription	
 	
-	Set CreateNewAttribute = objAttr
+	Set CreateNewAttribute = objAttribute
 
 End Function
