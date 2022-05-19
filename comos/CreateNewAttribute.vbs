@@ -1,4 +1,4 @@
-'example
+' EXAMPLE :
 Set objNewAttribute = CreateNewAttribute(c, "Z00A00001", "New Attribute")
 
 Function CreateNewAttribute(objCDev, strName, strDescription)
