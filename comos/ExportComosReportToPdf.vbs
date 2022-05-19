@@ -1,18 +1,25 @@
 ' EXAMPLE :
-Set objReport = a
-strFilepath = "C:\temp\test.pdf"
-Output ExportComosReportToPdf(objReport, strFilepath)
+Set objDocument = a
+strFilepath = "C:\temp\single-doc.pdf"
+bExported = ExportComosReportToPdf(objDocument, strFilepath)
 
+' EXAMPLE 2 :
+Set colTemp = Project.Workset.GetTempCollection
+colDocuments.add a
+colDocuments.add b
+strFilepath = "C:\temp\multiple-doc.pdf"
+bExported = ExportComosReportToPdf(colDocuments, strFilepath)
 
-Function ExportComosReportToPdf(objReport, strFilepath)
-' DESCRIPTION : exports COMOS report to filesystem as pdf.
+Function ExportComosReportToPdf(objDocuments, strFilepath)
+' DESCRIPTION : exports COMOS document(s) to filesystem as pdf.
 ' filepath must include pdf extension.
 
 ' SCRIPT REVISIONS :
 ' (1) 13-Feb-2020 : created
-
+' (2) 19-May-2022: beautify script, example 2 added (also possible with document collections)
+	
 ' INPUT :
-' (1) objComos: object from comos tree - [comos object]
+' (1) objDocuments: comos document object(s) - can either be document or collection of documents - [comos document object(s)]
 ' (2) strFilepath: path of exported pdf document - [pdf]
 
 ' OUTPUT :
@@ -34,7 +41,7 @@ Function ExportComosReportToPdf(objReport, strFilepath)
  	objExport.DescriptionText = true
  	objExport.NavigatorText = false
  	objExport.SilentMode = true
-	objExport.Export strFilepath,objReport, Project.Workset
+	objExport.Export strFilepath, objDocuments, Project.Workset
 
  	ExportComosReportToPdf = true
 
