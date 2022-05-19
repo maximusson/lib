@@ -14,7 +14,8 @@ Function AddPopup(Popup, strContextText, strContextID)
 ' DESCRIPTION : adds an entry to a context menu
 
 ' SCRIPT REVISIONS :
-' 1 : 19-Feb-2019 : Created
+' (1) 19-Feb-2019 : created
+	' (2) 19-May-2022 : beautify script
 
 ' INPUT :
 ' (1) Popup: Popup object - [comos system object]
