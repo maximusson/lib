@@ -3,17 +3,18 @@ Function OnMenuCreate(Popup,Context)
 'Input : Context -> Context menu object
 'Context -> Context object from which the call is made.
 'Context.ComosObject -> Current object or Context.ComosObjects -> Current objects
-
-    bAdd = AddPopupWithIconFromFileshare(Popup, "Context Menu Text", "ID_COMOSICON", "icons\_1PE\CC5.ICO")
+	
+	' EXAMPLE :
+	bAdd = AddPopupWithIconFromFileshare(Popup, "Context Menu Text", "ID_COMOSICON", "icons\_1PE\CC5.ICO")
 
 End Function
-
 
 Function AddPopupWithIconFromFileshare(Popup, strContextText, strContextID, strRelativeIconPath)
 ' DESCRIPTION : adds a popup to a given context menu with icon from fileshare
 
 ' SCRIPT REVISIONS :
-' 1 - 19-Feb-2019 - Created
+' (1) 19-Feb-2019 : created
+' (2) 19-May-2022 : beautify script
 
 ' INPUT :
 ' (1) Popup: Popup object - [comos system object]
@@ -22,32 +23,32 @@ Function AddPopupWithIconFromFileshare(Popup, strContextText, strContextID, strR
 ' (4) strRelativeIconPath: relative icon path. root is your COMOS document folder of base project - [string]
 
 ' OUTPUT :
-' (1) returns true if script ran completely [boolean]
+' (1) AddPopupWithIconFromFileshare: returns true if script ran completely [boolean]
 
-    strPath = ""
-    Select Case Project.Type
-    Case "S"
-       strPath = Project.GetDocumentDirectory
-    Case "P"
-       strPath = Project.CDeviceSystem.GetDocumentDirectory
-    End Select
+	AddPopupWithIconFromFileshare = false
+	
+	strPath = ""
+	Select Case Project.Type
+	Case "S"
+		strPath = Project.GetDocumentDirectory
+	Case "P"
+		strPath = Project.CDeviceSystem.GetDocumentDirectory
+	End Select
 
-    AddPopupWithIconFromFileshare = false
-    Popup.Add strContextText, strContextID
+	Popup.Add strContextText, strContextID
 
-    If strPath <> "" Then
-       strPath = strPath & "\" & strRelativeIconPath
-       strPath = Replace(strPath, "\\", "\")
-       Set fso = CreateObject("Scripting.FileSystemObject")
-       If fso.FileExists(strPath) Then
-          Popup.SetPicture strContextID, LoadPicture(strPath)
-       End If
-   End If
+	If strPath <> "" Then
+		strPath = strPath & "\" & strRelativeIconPath
+		strPath = Replace(strPath, "\\", "\")
+		Set fso = CreateObject("Scripting.FileSystemObject")
+		If fso.FileExists(strPath) Then
+			Popup.SetPicture strContextID, LoadPicture(strPath)
+		End If
+	End If
 
-    AddPopupWithIconFromFileshare = true
+	AddPopupWithIconFromFileshare = true
 
 End Function
-
 
 ' untested icon paths
 icons\1PE\CC5.ICO
