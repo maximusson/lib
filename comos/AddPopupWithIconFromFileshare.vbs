@@ -39,7 +39,7 @@ Function AddPopupWithIconFromFileshare(Popup, strContextText, strContextID, strR
 
 	If strPath <> "" Then
 		strPath = strPath & "\" & strRelativeIconPath
-		strPath = Replace(strPath, "\\", "\")
+		'strPath = Replace(strPath, "\\", "\")
 		Set fso = CreateObject("Scripting.FileSystemObject")
 		If fso.FileExists(strPath) Then
 			Popup.SetPicture strContextID, LoadPicture(strPath)
