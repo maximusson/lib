@@ -6,7 +6,7 @@ Function NavigateToObjectInComosTree(objComos)
 ' DESCRIPTION : navigate to any comos object within a tree
 
 ' SCRIPT REVISIONS :
-' 1 - 10-Jan-2020 - Created
+' 1 : 10-Jan-2020 : Created
 
 ' INPUT :
 ' (1) objComos: object from comos tree - [comos object]
