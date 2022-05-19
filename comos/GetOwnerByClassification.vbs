@@ -10,7 +10,7 @@ Function GetOwnerByClassification(ByVal objStart, bolCheckStartObjectItself, int
 
 ' SCRIPT REVISIONS :
 ' (1) 01-Aug-2019 : created
-' (2) 19-May-2022 : beautify scriopt
+' (2) 19-May-2022 : beautify script, changed order of arguments
    
 ' INPUT :
 ' (1) intSearchKey: classification number as integer, 1, 2, 3 or 4 - [integer]
