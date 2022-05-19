@@ -14,17 +14,17 @@ Function CreateNewTextfile(strTextfilePath)
 ' OUTPUT :
 ' (1) returns true if script ran completely [boolean]
   
-  CreateNewTextfile = false
-  Set fso = CreateObject("Scripting.FileSystemObject")
+	CreateNewTextfile = false
+	Set fso = CreateObject("Scripting.FileSystemObject")
 
-  If strTextfilePath = "" Then Exit Function
-  If IsFilepathUniqueAndFolderpathValid(strTextfilePath) = false Then Exit Function
+	If strTextfilePath = "" Then Exit Function
+	If IsFilepathUniqueAndFolderpathValid(strTextfilePath) = false Then Exit Function
      
-  Set objFile = fso.CreateTextfile(strTextFilePath)
-  CreateNewTextfile = true
+	Set objFile = fso.CreateTextfile(strTextFilePath)
+	CreateNewTextfile = true
 
-  Set objFile = nothing
-  Set fso = nothing
+	Set objFile = nothing
+	Set fso = nothing
 End Function
   
 Function IsFilepathUniqueAndFolderpathValid(strFilepath)
