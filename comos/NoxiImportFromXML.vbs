@@ -22,7 +22,7 @@ Function NoxiImportFromXML(objRoot, strFilepath)
 	If objRoot Is Nothing Then Exit Function
 
 	Set objNoxi = CreateObject("ComosNOXIE.Noxie")
-	objNoxi.DeSerializeToFile objRoot, strFilepath
+		objNoxi.DeSerializeFromFile objRoot, strFilepath
 	Set objNoxi = Nothing
 
 	NoxiImportFromXML = true
