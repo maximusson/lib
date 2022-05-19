@@ -19,6 +19,7 @@ Function ClickOnButton(objAttr)
 	If objAttr Is Nothing Then Exit Function
 	If objAttr.SystemType <> 10 Then Exit Function
 	If objAttr.ControlType <> "ComosSUIButton.SUIButton" Then Exit Function
+				
 	objAttr.ScriptEngine.ScriptObject.OnClick()
             
 	ClickOnButton = true 
