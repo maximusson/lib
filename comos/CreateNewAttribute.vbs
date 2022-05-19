@@ -1,7 +1,7 @@
 ' EXAMPLE :
 Set objNewAttribute = CreateNewAttribute(c, "Z00A00001", "New Attribute")
 
-Function CreateNewAttribute(objCDev, strName, strDescription)
+Function CreateNewAttribute(objCDevice, strName, strDescription)
 ' DESCRIPTION : creates new attribute on a base object
 
 ' SCRIPT REVISIONS :
@@ -9,7 +9,7 @@ Function CreateNewAttribute(objCDev, strName, strDescription)
 ' 2 : 19-May-2022 : beautify script
 	
 ' INPUT :
-' (1) objCDev: cdevice where new attribut is created - [comos system object]
+' (1) objCDevice: cdevice where new attribut is created - [comos system object]
 ' (2) strName: name of new attribut - [string]
 ' (3) strDescription: description of new attribute - [string]
 
@@ -18,10 +18,10 @@ Function CreateNewAttribute(objCDev, strName, strDescription)
 
 	Set CreateNewAttribute = Nothing
 	
-	If objCDev.SystemType <> 13 Then Exit Function
+	If objCDevice.SystemType <> 13 Then Exit Function
 	If strName = "" or strDescription = "" Then Exit Function
 
-	Set colSpec = objCDev.OwnSpecifications
+	Set colSpec = objCDevice.OwnSpecifications
 	If colSpec.ItemExist(strName) Then Exit Function
 
 	Set objAttribute = colSpec.CreateNewWithName(strName)
