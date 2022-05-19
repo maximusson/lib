@@ -21,6 +21,6 @@ Function ClickOnButton(objAttr)
         If objAttr.ControlType <> "ComosSUIButton.SUIButton" Then Exit Function
         objAttr.ScriptEngine.ScriptObject.OnClick()
             
-        ClickOnButton = true
+		ClickOnButton = true 
             
 End Function
