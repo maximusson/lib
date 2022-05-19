@@ -6,11 +6,12 @@ strFilepath = "C:\merged.pdf"
 bMerged = MergePdfFiles(listFilepaths, strFilepath)
 
 Function MergePdfFiles(listFilepaths, strFilepath)
-' DESCRIPTION: merges multiple pdfs into one pdf
+' DESCRIPTION: merges multiple pdfs into one pdf - ToDo: check if export path is valid, check if pdf file exists
 
 ' VERSIONS:
-' 1 : 18-May-2022 : created
-
+' (1) 18-May-2022 : created
+' (2) 19-May-2022 : beautify script
+	
 ' INPUTS:
 ' (1) listFilepaths: arraylist of filepaths [arraylist] - CreateObject("System.Collections.Arraylist")
 ' (2) strFilepath: filepath for merged pdf [string]
