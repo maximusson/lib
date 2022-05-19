@@ -6,8 +6,8 @@ Function CreateNewTextfile(strTextfilePath)
 ' DESCRIPTION : creates new textfile if path is valid and
 
 ' SCRIPT REVISIONS :
-' 1 : 19-May-2022 : Created
-' 2 : 19-May-2022 : beautify
+' (1) 19-May-2022 : created
+' (2) 19-May-2022 : beautify
 
 ' INPUT :
 ' (1) strTextfilePath: path for new textfile - [string]
@@ -16,11 +16,12 @@ Function CreateNewTextfile(strTextfilePath)
 ' (1) returns true if script ran completely [boolean]
   
 	CreateNewTextfile = false
-	Set fso = CreateObject("Scripting.FileSystemObject")
-
+	
 	If strTextfilePath = "" Then Exit Function
 	If IsFilepathUniqueAndFolderpathValid(strTextfilePath) = false Then Exit Function
-     
+			
+	Set fso = CreateObject("Scripting.FileSystemObject")
+			
 	Set objFile = fso.CreateTextfile(strTextFilePath)
 	Set objFile = nothing
 	Set fso = nothing
