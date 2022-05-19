@@ -6,8 +6,8 @@ Function ClickOnButton(objAttribute)
 ' DESCRIPTION : simulates a click on a button in COMOS gui
    
 ' SCRIPT REVISIONS :
-' 1 : 13-Feb-2020 : created
-' 2 : 19-May-2022 : beautify
+' (1) 13-Feb-2020 : created
+' (2) 19-May-2022 : beautify
    
 ' INPUT :
 ' (1) objAttribute: object from comos tree - [comos attribute object]
