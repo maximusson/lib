@@ -37,6 +37,6 @@ Function GetOrCreateFolderpath(strParentFolderpath, strNewFolderName)
 		GetOrCreateFolderpath = strFolderpath
 		Set fso = Nothing
 		Exit Function
-    End If
+	End If
 			
 End Function
