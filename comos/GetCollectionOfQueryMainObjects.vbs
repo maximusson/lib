@@ -8,13 +8,14 @@ Function GetCollectionOfQueryMainObjects(objStart)
 ' BE CAREFUL! This script uses error handling. This can be tricky when debugging script.
 	
 ' REVISION:
-' 1 : 07-Aug-2019 : created
+' (1) 07-Aug-2019 : created
+' (2) 19-May-2022: beautify script	
 	
 ' INPUT: 
 ' (1) objStart: [comos object] or [collection]
 	
 ' OUTPUT: 
-' (2) GetCollectionOfQueryMainObjects: [collection]
+' (2) GetCollectionOfQueryMainObjects: collection of start objects [collection]
 	
 	Set GetCollectionOfQueryMainObjects = Project.WorkSet.GetTempCollection
 	
