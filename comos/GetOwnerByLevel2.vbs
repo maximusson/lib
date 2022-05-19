@@ -7,7 +7,6 @@ Else
 	Output "nothing"
 End If
 
-
 Function GetOwnerByLevel2(ByVal objStart, intLevel)
 ' DESCRIPTION:
 ' returns owner of object, that has certain level.
