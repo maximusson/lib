@@ -19,7 +19,7 @@ Function AddPopup(Popup, strContextText, strContextID)
 ' INPUT :
 ' (1) Popup: Popup object - [comos system object]
 ' (2) strContextText: text that appears within context menu - [string]
-' (3) strContextID: id for context menu entry, make sure it is unique - [unique string]
+' (3) strContextID: id for context menu entry, make sure it is unique - [string]
 
 ' OUTPUT :
 ' (1) AddPopup: returns true if script ran completely [boolean]
