@@ -1,12 +1,13 @@
 ' EXAMPLE :
 Set objAttr = a
-Output ClickOnButton(objAttr)
+bClicked = ClickOnButton(objAttr)
 
 Function ClickOnButton(objAttr)
 ' DESCRIPTION : simulates a click on a button in COMOS gui
    
 ' SCRIPT REVISIONS :
 ' 1 : 13-Feb-2020 : created
+' 2 : 19-May-2022 : beautify
    
 ' INPUT :
 ' (1) objComos: object from comos tree - [comos object]
@@ -16,11 +17,11 @@ Function ClickOnButton(objAttr)
    
 	ClickOnButton = false
    
-	If objAttr Is Nothing Then Exit Function
-	If objAttr.SystemType <> 10 Then Exit Function
-	If objAttr.ControlType <> "ComosSUIButton.SUIButton" Then Exit Function
+	If objAttribute Is Nothing Then Exit Function
+	If objAttribute.SystemType <> 10 Then Exit Function
+	If objAttribute.ControlType <> "ComosSUIButton.SUIButton" Then Exit Function
 				
-	objAttr.ScriptEngine.ScriptObject.OnClick()
+	objAttribute.ScriptEngine.ScriptObject.OnClick()
             
 	ClickOnButton = true 
             
