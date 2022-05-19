@@ -8,7 +8,7 @@ Function MoveObject(objComos, objNewOwner)
 
 ' REVISIONS :
 ' (1) 30-Apr-2020 : created
-' (2) 19-May-2022: beautify script
+' (2) 19-May-2022 : beautify script
    
 ' INPUT :
 ' (1) objComos: object to be moved [Comos object]
