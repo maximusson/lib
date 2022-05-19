@@ -1,4 +1,4 @@
-'Example:
+' EXAMPLE :
 intLoginDate = 12208
 intDate = ConvertLoginDate2Date(intLoginDate)
 Output "intLoginDate: " & vbTab & intLoginDate:
@@ -9,34 +9,37 @@ Output "Day:" & vbTab & vbTab & Day(CDate(intDate))
 
 
 Function ConvertLoginDate2Date(intLoginDate)
-'DESCRIPTION: Converts a login date (special COMOS date type in sql table) to corresponding Microsoft date. No guarantee for correctness of script!
+' DESCRIPTION: Converts a login date (special COMOS date type in sql table) to corresponding Microsoft date. No guarantee for correctness of script ;)
 
-'INPUT:
-'(1) intLoginDate: date as integer [integer]
+' REVISIONS :
+' (1) 30-April-2020 : created
+' (2) 19-May-2022 : beautify script
 
-'OUTPUT:
-'(1) ConvertLoginDate2Date: converted login date [date]
+' INPUT:
+' (1) intLoginDate: date as integer [integer]
 
-   intLoginDate = Int(intLoginDate)
+' OUTPUT:
+' (1) ConvertLoginDate2Date: converted login date [integer]
 
-   ' Reference year
-   intReferenceYear = 2000
+	intLoginDate = Int(intLoginDate)
 
-   ' COMOS Year has 600 days
-   intDaysPerYearInComos = 600
+	' Reference year
+	intReferenceYear = 2000
+
+	' COMOS Year has 600 days
+	intDaysPerYearInComos = 600
    
-   ' COMOS Month has 40 days
-   intDaysPerMonthInComos = 40
+	' COMOS Month has 40 days
+	intDaysPerMonthInComos = 40
    
-   ' First of january is 41
-   intFirstOfJanuary = 41
+	' First of january is 41
+	intFirstOfJanuary = 41
    
-   intCounterYear = Int((intLoginDate - intFirstOfJanuary) / intDaysPerYearInComos)
-   intYear = intReferenceYear + intCounterYear
-   intDayInYear = intLoginDate - intCounterYear * intDaysPerYearInComos
-   intMonth = Int((intDayInYear - intDaysPerMonthInComos) / intDaysPerMonthInComos) + 1
-   intDay = intDayInYear - intMonth * intDaysPerMonthInComos
+	intCounterYear = Int((intLoginDate - intFirstOfJanuary) / intDaysPerYearInComos)
+	intYear = intReferenceYear + intCounterYear
+	intDayInYear = intLoginDate - intCounterYear * intDaysPerYearInComosintMonth = Int((intDayInYear - intDaysPerMonthInComos) / intDaysPerMonthInComos) + 1
+	intDay = intDayInYear - intMonth * intDaysPerMonthInComos
    
-   ConvertLoginDate2Date = CDbl(CDate(intDay & "-" & MonthName(intMonth) & "-" & intYear))
+	ConvertLoginDate2Date = CDbl(CDate(intDay & "-" & MonthName(intMonth) & "-" & intYear))
     
 End Function
