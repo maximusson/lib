@@ -11,7 +11,7 @@ Function CreateNewExcelFile(strExcelPath)
 ' (1) strExcelPath: new path for excel file - [string]
 
 ' OUTPUT :
-' (1) returns true if script ran completely [boolean]
+' (1) CreateNewExcelFile: returns true if script ran completely [boolean]
 	
 	CreateNewExcelFile = false
 	
