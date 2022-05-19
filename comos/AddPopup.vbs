@@ -9,7 +9,6 @@ Function OnMenuCreate(Popup,Context)
 
 End Function
 
-
 Function AddPopup(Popup, strContextText, strContextID)
 ' DESCRIPTION : adds an entry to a context menu
 
