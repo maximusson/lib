@@ -2,13 +2,14 @@
 Set objQuery = a
 strColumnName = "Column1"
 strFilterValue = "100"
-Output AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
+bFilterAdded = AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
 
 Function AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
 ' DESCRIPTION : adds a filter to a query column
    
 ' SCRIPT REVISIONS :
-' 1 - 18-May-2022 - created
+' (1) 18-May-2022 : created
+' (2) 19-May-2022 : beautify script
    
 ' INPUT :
 ' (1) objQuery: query - [comos object]
