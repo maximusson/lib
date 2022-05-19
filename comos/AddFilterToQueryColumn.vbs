@@ -21,8 +21,8 @@ Function AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
    
 	OpenQueryWindow = false
    
-	If objAttr Is Nothing Then Exit Function
-	If objAttr.SystemType <> 2 Then Exit Function
+	If objQuery Is Nothing Then Exit Function
+	If objQuery.SystemType <> 2 Then Exit Function
          
 	Set ws = Project.Workset
 	Set objNewFilter = objQuery.Filter.AddNew
