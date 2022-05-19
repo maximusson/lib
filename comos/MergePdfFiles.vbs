@@ -5,7 +5,6 @@ listFilepaths.add "C:\test2.pdf"
 strFilepath = "C:\merged.pdf"
 bMerged = MergePdfFiles(listFilepaths, strFilepath)
 
-
 Function MergePdfFiles(listFilepaths, strFilepath)
 ' DESCRIPTION: merges multiple pdfs into one pdf
 
