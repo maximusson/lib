@@ -1,4 +1,6 @@
 Sub Action(Query, QueryBrowser)
+	
+	' EXAMPLE :
 	Set colDocs = CreateObject("Scripting.Dictionary")
 	counter = 0
 	
@@ -18,9 +20,17 @@ Sub Action(Query, QueryBrowser)
 	
 End Sub
 
-	
 Function GetOrgDocument(objDoc)
-' DESCRIPTION: return orginial document
+' DESCRIPTION : returns original document
+
+' SCRIPT REVISIONS :
+' (1) 19-May-2022 : created
+
+' INPUT :
+' (1) objDoc: comos document - [comos document object]
+
+' OUTPUT :
+' (1) GetOrgDocument: returns org document [comos document object]
 	
 	Set GetOrgDocument = Nothing
 	
