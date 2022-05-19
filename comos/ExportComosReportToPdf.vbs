@@ -9,7 +9,7 @@ Function ExportComosReportToPdf(objReport, strFilepath)
 ' filepath must include pdf extension.
 
 ' SCRIPT REVISIONS :
-' 1 - 13-Feb-2020 - Created
+' (1) 13-Feb-2020 : created
 
 ' INPUT :
 ' (1) objComos: object from comos tree - [comos object]
