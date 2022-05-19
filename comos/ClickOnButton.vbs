@@ -10,7 +10,7 @@ Function ClickOnButton(objAttribute)
 ' 2 : 19-May-2022 : beautify
    
 ' INPUT :
-' (1) objComos: object from comos tree - [comos attribute object]
+' (1) objAttribute: object from comos tree - [comos attribute object]
    
 ' OUTPUT :
 ' (1) ClickOnButton: returns true if script ran completely [boolean]
