@@ -5,8 +5,9 @@ Function CreateNewAttribute(objCDev, strName, strDescription)
 ' DESCRIPTION : creates new attribute on a base object
 
 ' SCRIPT REVISIONS :
-' 1 - 19-May-2022 - Created
-
+' 1 : 19-May-2022 : Created
+' 2 : 19-May-2022 : beautify script
+	
 ' INPUT :
 ' (1) objCDev: cdevice where new attribut is created - [comos system object]
 ' (2) strName: name of new attribut - [string]
