@@ -1,7 +1,7 @@
 ' EXAMPLE :
-Output GetLevelAsInteger(a)
+Output GetLevelOfObject(a)
 
-Function GetLevelAsInteger(ByVal objComos)
+Function GetLevelOfObject(ByVal objComos)
 ' DESCRIPTION : returns level of comos object in tree (first level is 1) - WARNING: script not tested
 
 ' SCRIPT REVISIONS :
@@ -12,14 +12,14 @@ Function GetLevelAsInteger(ByVal objComos)
 ' (1) objComos: comos object from tree [comos system object]
 
 ' OUTPUT :
-' (1) GetLevelAsInteger: returns level [integer]
+' (1) GetLevelOfObject: returns level [integer]
 
-	GetLevelAsInteger = -1
+	GetLevelOfObject = -1
 	If objComos Is Nothing Then Exit Function
 		
-	GetLevelAsInteger = 0
+	GetLevelOfObject = 1
 	Do While (Not objComos.Owner Is Nothing)
-		GetLevelAsInteger = GetLevelAsInteger + 1
+		GetLevelOfObject = GetLevelOfObject + 1
 		Set objComos = objComos.Owner
 	Loop
 	
