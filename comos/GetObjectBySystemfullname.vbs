@@ -3,7 +3,7 @@ colSystemType = Project.CDevices
 strSystemFullname = "@Y|A10|A20"
 objComos = GetObjectBySystemfullname(colSystemType, strSystemFullname)
 
-Function GetObjectBySystemfullname(intSystemType, strSystemUID)
+Function GetObjectBySystemfullname(colSystemType, strSystemFullname)
 ' DESCRIPTION : returns object via load object by type - UNTESTED
 
 ' SCRIPT REVISIONS :
