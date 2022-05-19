@@ -16,7 +16,7 @@ Function CreateNewExcelFile(strExcelPath)
 	CreateNewExcelFile = false
 	
 	If strExcelPath = "" Then Exit Function
-	If Function IsFilepathUniqueAndFolderpathValid(strExcelPath) = false Then Exit Function
+	If IsFilepathUniqueAndFolderpathValid(strExcelPath) = false Then Exit Function
 
 	Set objExcel = CreateObject("Excel.Application")
 	objExcel.Application.DisplayAlerts = False
