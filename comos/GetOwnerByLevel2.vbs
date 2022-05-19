@@ -17,11 +17,11 @@ Function GetOwnerByLevel2(ByVal objStart, intLevel)
 ' (2) 19-May-2022 : beautify script
    
 ' INPUTS:
-' (1) objStart - start object for searching [comos object]
-' (2) intLevel - level of owner [integer]
+' (1) objStart: start object for searching [comos object]
+' (2) intLevel: level of owner [integer]
 
 ' OUTPUS:
-' (1) owner - returns owner or nothing [comos object]
+' (1) GetOwnerByLevel2: returns owner or nothing [comos object]
 
 	Set objNavigator = CreateObject("ComosObjNavigator.ObjNavigator")
 	objNavigator.AddStep 4, intLevel
