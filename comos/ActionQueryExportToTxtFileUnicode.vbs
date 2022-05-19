@@ -2,27 +2,30 @@ Sub Action(Query, QueryBrowser)
 	
 	' EXAMPLE :
 	strExportPath = "C:\export.txt"
-	Call ActionQueryExportToTxtFileUnicode(Query, strExportPath)
+	bExported = ActionQueryExportToTxtFileUnicode(Query, strExportPath)
 	
 End Sub
 
-Sub ActionQueryExportToTxtFileUnicode(Query, strExportPath)
+Function ActionQueryExportToTxtFileUnicode(Query, strExportPath)
 ' DESCRIPTION: exports visible data from COMOS query to txt file - using unicode for encoding
 
 ' SCRIPT REVISIONS :
 ' (1) 01-May-2022 : created
-' (2) 19-May-2022 : beautify script
+' (2) 19-May-2022 : beautify script, changed sub to function
 	
 ' INPUT :
 ' (1) Query: query from action function - [comos query object]
 ' (2) strExportPath: path for export file - [string]
 
 ' OUTPUT :
-' () nothing
+' (1) ActionQueryExportToTxtFileUnicode: true if script ran completely [boolean]
+	
+	ActionQueryExportToTxtFileUnicode = false
 	
 	Set fso = CreateObject("Scripting.FileSystemObject")
-	If fso.FileExists(strExportPath) = true Then Exit Sub
-	If LCase(Right(strExportPath,4)) <> ".txt" then Exit Sub	
+	If strExportPath = "" then Exit Function
+	If fso.FileExists(strExportPath) = true Then Exit Function
+	If LCase(Right(strExportPath,4)) <> ".txt" then Exit Function	
 
 	' get query row and column information
 	Set colColumns = Query.BaseQuery.Columns
@@ -72,4 +75,6 @@ Sub ActionQueryExportToTxtFileUnicode(Query, strExportPath)
 	stream.SaveToFile strExportPath, 2
 	stream.Close
 
-End Sub
+	ActionQueryExportToTxtFileUnicode = true
+				
+End Function
