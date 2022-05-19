@@ -1,4 +1,4 @@
-'example
+' EXAMPLE :
 Set objNewTab = CreateNewTab(c, "Z00T00001", "New Tab")
 
 Function CreateNewTab(objCDevice, strTabName, strTabDescription)
