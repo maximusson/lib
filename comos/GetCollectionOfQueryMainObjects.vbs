@@ -33,5 +33,5 @@ Function GetCollectionOfQueryMainObjects(objStart)
 		Next
 	End If  
 	Err.Clear
-	
+
 End Function
