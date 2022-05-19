@@ -4,8 +4,8 @@ Function OnMenuCreate(Popup,Context)
 'Context -> Context object from which the call is made.
 'Context.ComosObject -> Current object or Context.ComosObjects -> Current objects
 
-    ' EXAMPLE :
-    bAdd = AddPopup(Popup, "New Entry", "ID_NEWENTRY")
+	' EXAMPLE :
+	bAdd = AddPopup(Popup, "New Entry", "ID_NEWENTRY")
 
 End Function
 
@@ -24,7 +24,7 @@ Function AddPopup(Popup, strContextText, strContextID)
 ' OUTPUT :
 ' (1) AddPopup: returns true if script ran completely [boolean]
 
-    AddPopup = false
+ 	AddPopup = false
     Popup.add strContextText, strContextID
     AddPopup = true
 
