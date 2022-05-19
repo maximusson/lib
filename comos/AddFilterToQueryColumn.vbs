@@ -26,7 +26,7 @@ Function AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
          
 	Set ws = Project.Workset
 	Set objNewFilter = objQuery.Filter.AddNew
-	Set objNewFilter.Column = Query.BaseQuery.Columns.Item(strColumnName)
+	Set objNewFilter.Column = objQuery.BaseQuery.Columns.Item(strColumnName)
 	objNewFilter.Value = strFilterValue
 	objNewFilter.Operator = 9
          
