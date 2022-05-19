@@ -14,13 +14,13 @@ Function ClickOnButton(objAttr)
 ' OUTPUT :
 ' (1) ClickOnButton: returns true if script ran completely [boolean]
    
-        ClickOnButton = false
+	ClickOnButton = false
    
-        If objAttr Is Nothing Then Exit Function
-        If objAttr.SystemType <> 10 Then Exit Function
-        If objAttr.ControlType <> "ComosSUIButton.SUIButton" Then Exit Function
-        objAttr.ScriptEngine.ScriptObject.OnClick()
+	If objAttr Is Nothing Then Exit Function
+	If objAttr.SystemType <> 10 Then Exit Function
+	If objAttr.ControlType <> "ComosSUIButton.SUIButton" Then Exit Function
+	objAttr.ScriptEngine.ScriptObject.OnClick()
             
-		ClickOnButton = true 
+	ClickOnButton = true 
             
 End Function
