@@ -14,7 +14,7 @@ Function CreateNewAttribute(objCDev, strName, strDescription)
 ' (3) strDescription: description of new attribute - [string]
 
 ' OUTPUT :
-' (1) returns attribute if script ran completely [boolean] 
+' (1) CreateNewAttribute: returns attribute if script ran completely [boolean] 
 
 	Set CreateNewAttribute = Nothing
 	
