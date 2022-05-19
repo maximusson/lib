@@ -18,7 +18,7 @@ Sub ActionQueryExportToTxtFileUnicode(Query, strExportPath)
 ' (2) strExportPath: path for export file - [string]
 
 ' OUTPUT :
-' (1) ActionQueryExportToTxtFileUnicode: returns true if script ran completely [boolean]
+' () nothing
 	
 	Set fso = CreateObject("Scripting.FileSystemObject")
 	If fso.FileExists(strExportPath) = true Then Exit Sub
