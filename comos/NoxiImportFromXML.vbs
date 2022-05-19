@@ -7,8 +7,8 @@ Function NoxiImportFromXML(objRoot, strFilepath)
 ' DESCRIPTION : imports comos object(s) from xml file
 
 ' SCRIPT REVISIONS :
-' 1 : 01-May-2022 : Created
-' 2 : 19-May-2022 : beautify script
+' (1) 01-May-2022 : created
+' (2) 19-May-2022 : beautify script
 
 ' INPUT :
 ' (1) objRoot: object from comos tree - [comos object]
