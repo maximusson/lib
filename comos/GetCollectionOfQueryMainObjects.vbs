@@ -1,4 +1,4 @@
-'example
+' EXAMPLE :
 Set colMainObjects = GetCollectionOfQueryMainObjects(TopQuery.MainObject)
 
 Function GetCollectionOfQueryMainObjects(objStart)
@@ -8,7 +8,7 @@ Function GetCollectionOfQueryMainObjects(objStart)
 ' BE CAREFUL! This script uses error handling. This can be tricky when debugging script.
 	
 ' REVISION:
-' 1 07-Aug-2019 created
+' 1 : 07-Aug-2019 : created
 	
 ' INPUT: 
 ' (1) objStart: [comos object] or [collection]
