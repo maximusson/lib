@@ -1,8 +1,18 @@
-'example:
+' EXAMPLE :
 Set objOrgDoc = GetOrgDocument(a)
 
-Function GetOrgDocument(objDoc)
+Function GetOrgDocument(objDocument)
 ' DESCRIPTION: return orginial document
+
+' SCRIPT REVISIONS :
+' (1) 12-Feb-2022 : created
+' (2) 19-May-2022 : beautify script
+
+' INPUT :
+' (1) objDocument: comos document [comos document object]
+
+' OUTPUT :
+' (2) GetOrgDocument: comos org document [comos document object]
 	
 	Set GetOrgDocument = Nothing
 	
