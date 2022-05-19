@@ -4,7 +4,8 @@ Function OnMenuCreate(Popup,Context)
 'Context -> Context object from which the call is made.
 'Context.ComosObject -> Current object or Context.ComosObjects -> Current objects
    
-    bAdd = AddPopupWithIconFromCOMOS(Popup, "Context Menu Text", "ID_COMOSICON", "std_zoomout")
+	' EXAMPLE :
+	bAdd = AddPopupWithIconFromCOMOS(Popup, "Context Menu Text", "ID_COMOSICON", "std_zoomout")
 
 End Function
 
@@ -13,8 +14,9 @@ Function AddPopupWithIconFromCOMOS(Popup, strContextText, strContextID, strIcon)
 ' DESCRIPTION : adds a popup to a given context menu with COMOS system icon
 
 ' SCRIPT REVISIONS :
-' 1 - 19-Feb-2019 - Created
-
+' (1) 19-Feb-2019 : created
+' (2) 19-May-2022 : beautify script
+   
 ' INPUT :
 ' (1) Popup: Popup object - [comos system object]
 ' (2) strContextText: text that appears within context menu - [string]
@@ -24,10 +26,10 @@ Function AddPopupWithIconFromCOMOS(Popup, strContextText, strContextID, strIcon)
 ' OUTPUT :
 ' (1) returns true if script ran completely [boolean]
 
-    AddPopupWithIconFromCOMOS = false
-    Popup.add strContextText, strContextID
-    Popup.SetImage strContextID, strIcon
-    AddPopupWithIconFromCOMOS = true
+	AddPopupWithIconFromCOMOS = false
+	Popup.add strContextText, strContextID
+	Popup.SetImage strContextID, strIcon
+	AddPopupWithIconFromCOMOS = true
 
 End Function
 
