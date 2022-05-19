@@ -17,7 +17,8 @@ Function CreateNewTab(objCDevice, strTabName, strTabDescription)
 ' (1) CreateNewTab: returns tab if script ran completely [boolean]	
 	
 	Set CreateNewTab = Nothing
-
+	
+	If objCDevice.SystemType <> 13 Then Exit Function
 	If strTabName = "" or strTabDescription = "" Then Exit Function
 
 	Set colSpec = objCDevice.OwnSpecifications
