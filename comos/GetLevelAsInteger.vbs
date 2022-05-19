@@ -2,7 +2,7 @@
 Output GetLevelAsInteger(a)
 
 Function GetLevelAsInteger(ByVal objComos)
-' DESCRIPTION : returns level of comos object in tree (first level is 1)
+' DESCRIPTION : returns level of comos object in tree (first level is 1) - WARNING: script not tested
 
 ' SCRIPT REVISIONS :
 ' (1) 13-Oct-2019 : created
