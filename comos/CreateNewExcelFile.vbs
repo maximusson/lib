@@ -1,11 +1,11 @@
-'example:
+' EXAMPLE :
 bCreated = CreateNewExcelFile("C:\temp.xlsx")
 
 Function CreateNewExcelFile(strExcelPath)
 ' DESCRIPTION : creates new excel file if file is not existing and folderpath valid
 
 ' SCRIPT REVISIONS :
-' 1 - 22-May-2022 - Created
+' (1) 19-May-2022 - created
 
 ' INPUT :
 ' (1) strExcelPath: new path for excel file - [string]
