@@ -1,7 +1,7 @@
 ' EXAMPLE :
 Set objRoot = a
 strFilepath = "C:\NoxiExport.xml"
-output NoxiImportFromXML(objRoot, strFilepath)
+bImported = NoxiImportFromXML(objRoot, strFilepath)
 
 Function NoxiImportFromXML(objRoot, strFilepath)
 ' DESCRIPTION : imports comos object(s) from xml file
