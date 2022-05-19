@@ -1,4 +1,4 @@
-'Example:
+' EXAMPLE :
 strTextfilePath = "C:\new.txt"
 bCreated = CreateNewTextfile(strTextfilePath)
 
@@ -6,7 +6,8 @@ Function CreateNewTextfile(strTextfilePath)
 ' DESCRIPTION : creates new textfile if path is valid and
 
 ' SCRIPT REVISIONS :
-' 1 - 19-May-2022 - Created
+' 1 : 19-May-2022 : Created
+' 2 : 19-May-2022 : beautify
 
 ' INPUT :
 ' (1) strTextfilePath: path for new textfile - [string]
@@ -21,10 +22,11 @@ Function CreateNewTextfile(strTextfilePath)
 	If IsFilepathUniqueAndFolderpathValid(strTextfilePath) = false Then Exit Function
      
 	Set objFile = fso.CreateTextfile(strTextFilePath)
-	CreateNewTextfile = true
-
 	Set objFile = nothing
 	Set fso = nothing
+			
+	CreateNewTextfile = true
+
 End Function
   
 Function IsFilepathUniqueAndFolderpathValid(strFilepath)
