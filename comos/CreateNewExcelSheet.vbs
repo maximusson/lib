@@ -1,8 +1,26 @@
-Sub CreateNewExcelSheet(strExcelPath, strSheetName)
-' DESCRIPTION: opens given excel file and adds sheet
+' EXAMPLE :
+strExcelPath = "C:\test.xlsx"
+strSheetName = "New Sheet"
 
+Function CreateNewExcelSheet(strExcelPath, strSheetName)
+' DESCRIPTION: opens given excel file and adds sheet - if sheet exists or file does not exist, COMOS cancels script
+	
+' SCRIPT REVISIONS :
+' (1) 19-May-2022 : created
+
+' INPUT :
+' (1) strExcelPath: new path for excel file - [string]
+' (2) strSheetName: name for new excel sheet - [sheet]
+
+' OUTPUT :
+' (1) CreateNewExcelSheet: returns true if script ran completely [boolean]
+	
+	CreateNewExcelSheet = false
+	
 	Set fso = CreateObject("Scripting.FileSystemObject")
-	If fso.FileExists(strExcelPath) = false Then Exit Sub
+	If strExcelPath = "" Then Exit Function
+	If strSheetName = "" Then Exit Function
+	If fso.FileExists(strExcelPath) = false Then Exit Function
 
 	' open excel file
 	Set excelApp = CreateObject("Excel.Application")
@@ -30,4 +48,6 @@ Sub CreateNewExcelSheet(strExcelPath, strSheetName)
 	excelApp.quit
 	Set excelApp = Nothing
 	
-End Sub
+	CreateNewExcelSheet = true
+				
+End Function
