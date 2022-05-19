@@ -12,7 +12,7 @@ Function AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
 ' (2) 19-May-2022 : beautify script
    
 ' INPUT :
-' (1) objQuery: query - [comos object]
+' (1) objQuery: query - [comos query object]
 ' (2) strColumnName: name of column in query - [string]
 ' (3) strFilterName: value for filter - [string]
    
