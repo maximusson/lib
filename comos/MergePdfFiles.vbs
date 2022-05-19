@@ -1,37 +1,37 @@
-'Example Code
+' EXAMPLE :
 Set listFilepaths = CreateObject("System.Collections.Arraylist")
 listFilepaths.add "C:\test1.pdf"
 listFilepaths.add "C:\test2.pdf"
 strFilepath = "C:\merged.pdf"
-Output MergePdfFiles(listFilepaths, strFilepath)
+bMerged = MergePdfFiles(listFilepaths, strFilepath)
 
 
 Function MergePdfFiles(listFilepaths, strFilepath)
 ' DESCRIPTION: merges multiple pdfs into one pdf
 
 ' VERSIONS:
-' 1 - 18-May-2022 - created
+' 1 : 18-May-2022 : created
 
 ' INPUTS:
-' (1) listFilepaths - arraylist of filepaths [arraylist] - CreateObject("System.Collections.Arraylist")
-' (2) strFilepath - filepath for merged pdf [string]
+' (1) listFilepaths: arraylist of filepaths [arraylist] - CreateObject("System.Collections.Arraylist")
+' (2) strFilepath: filepath for merged pdf [string]
 
 ' OUTPUS:
-' (1) status whether export was succesful or not [boolean]
+' (1) MergePdfFiles: status whether export was succesful or not [boolean]
 
-   MergePdfFiles = false
+	MergePdfFiles = false
 
-   Set quickPdf = CreateObject("QuickPDFAX0812.PDFLibrary")
-   quickPDF.UnlockKey("jt9593uh8eh5ai4cu9b36hb5y")
-   strFileListName = "FilesToMerge"
-   objQuickPdf.ClearFileList fileListName
+	Set quickPdf = CreateObject("QuickPDFAX0812.PDFLibrary")
+	quickPDF.UnlockKey("jt9593uh8eh5ai4cu9b36hb5y")
+	strFileListName = "FilesToMerge"
+	objQuickPdf.ClearFileList fileListName
 	
-   For each strPdfFilepath in listFilepaths
-      objQuickPdf.AddToFileList strFileListName, strPdfFilepath	
-   Next
+	For each strPdfFilepath in listFilepaths
+		objQuickPdf.AddToFileList strFileListName, strPdfFilepath	
+	Next
 
-   objQuickPdf.MergeFileListFast strFileListName, strFilepath
+	objQuickPdf.MergeFileListFast strFileListName, strFilepath
 
-   MergePdfFiles = true
+	MergePdfFiles = true
 
 End Function
