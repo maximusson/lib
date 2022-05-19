@@ -8,7 +8,7 @@ Function CreateNewExcelFile(strExcelPath)
 ' 1 - 22-May-2022 - Created
 
 ' INPUT :
-' (1) strExcelPath: text that appears within context menu - [string]
+' (1) strExcelPath: new path for excel file - [string]
 
 ' OUTPUT :
 ' (1) returns true if script ran completely [boolean]
