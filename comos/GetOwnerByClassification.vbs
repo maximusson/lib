@@ -3,9 +3,9 @@ intSearchKey = 4
 strSearchClassification = "PM.C10"
 Set objStart = a
 bolCheckStartObjectItself = true
-Set objOwner = GetOwnerByClassification(intSearchKey, strSearchClassification, objStart, bolCheckStartObjectItself)
+Set objOwner = GetOwnerByClassification(objStart, bolCheckStartObjectItself, intSearchKey, strSearchClassification)
 
-Function GetOwnerByClassification(intSearchKey, strSearchClassification, ByVal objStart, bolCheckStartObjectItself)
+Function GetOwnerByClassification(ByVal objStart, bolCheckStartObjectItself, intSearchKey, strSearchClassification,)
 ' DESCRIPTION : searches owner by classfication and returns it if found - otherwise nothing
 
 ' SCRIPT REVISIONS :
