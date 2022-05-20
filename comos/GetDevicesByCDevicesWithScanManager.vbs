@@ -22,9 +22,9 @@ Function GetDevicesByCDevicesWithScanManager(objStart, colCDevices)
 	If UBound(colCDevices) < 0 Then Exit Function
 	
 	scanManager.root = objStart
-    scanManager.Recursive = True
-    scanManager.IncludeRoot = False
-    scanManager.SystemType = 8
+	scanManager.Recursive = True
+	scanManager.IncludeRoot = False
+	scanManager.SystemType = 8
     
 	For i = 0 To UBound(colCDevices)
 		Set objCDevice = Project.GetCDeviceBySystemFullname(colCDevices.item(i), 1)
