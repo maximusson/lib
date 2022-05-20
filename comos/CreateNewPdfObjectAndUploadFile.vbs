@@ -4,7 +4,7 @@ strPdfPath = "C:\test.pdf"
 bCreated = CreateNewPdfObjectAndUploadFile(objComos, strPdfPath)
 
 Function CreateNewPdfObjectAndUploadFile(objComos, strPdfPath)
-' DESCRIPTION: Creates new pdf object and import pdf from file system. UNTESTED
+' DESCRIPTION: Creates new pdf object in COMOS tree and imports pdf from file system. UNTESTED
 ' used to upload pdfs to base objects
 	
 ' SCRIPT REVISIONS :
