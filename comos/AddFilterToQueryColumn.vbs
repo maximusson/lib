@@ -33,3 +33,22 @@ Function AddFilterToQueryColumn(objQuery, strColumnName, strFilterValue)
 	OpenQueryWindow = true 
          
 End Function
+
+		
+' Set Query = a
+' Set objTopQuery = Query.XObj.TopQuery 
+' objTopQuery.Execute 
+' 
+' set filter
+' Set objQueryFilter = objTopQuery.Query.Filter
+' objQueryFilter.Clear
+' objQueryFilter.AddNew
+' Set objQueryFilter.Item(1).Column = Query.BaseQuery.Columns.Item(strColumnName)
+' objQueryFilter.Item(1).Value = strSearchString
+' objQueryFilter.Item(1).Operator = 10 ' qcVBLike
+' objQueryFilter.Item(1).CaseSensitive = False 
+' Query.Refresh
+' QueryBrowser.Refresh
+' 		
+' Set objQueryFilter = Nothing
+' Set objTopQuery = Nothing
