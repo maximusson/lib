@@ -28,9 +28,9 @@ Function GetDevicesByCDevicesWithScanManager(objStart, colCDevices)
     
 	For i = 0 To UBound(colCDevices)
 		Set objCDevice = Project.GetCDeviceBySystemFullname(colCDevices.item(i), 1)
-        If Not objCDevice Is Nothing Then scanManager.CObjects.Append objCDevice
-    Next
+		If Not objCDevice Is Nothing Then scanManager.CObjects.Append objCDevice
+	Next
     
-    Set ScanDevicesForCDevices = ws.Scan(scanManager)
+	Set ScanDevicesForCDevices = ws.Scan(scanManager)
        
 End Function
