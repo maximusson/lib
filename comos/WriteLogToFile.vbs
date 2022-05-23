@@ -11,6 +11,7 @@ Function WriteLogToFile(strLogFilePath, intOption, strActionTitle, strMessage, o
 
 ' SCRIPT REVISIONS :
 ' (1) 20-May-2022 : created
+' (20) 23-May-2022 : corrected spelling mistake decrption -> description
 
 ' INPUT :
 ' (1) strLogFilePath: path for new logfile - [string]
