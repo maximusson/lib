@@ -48,7 +48,7 @@ Function WriteLogToFile(strLogFilePath, intOption, strActionTitle, strMessage, o
 		Set objCurrentUser = ws.GetCurrentUser
 		Set objCurrentProject = ws.GetCurrentProject
 		Set objCurrentOverlay = objCurrentProject.CurrentWorkingOverlay
-		strUser = objCurrentUser.Decription
+		strUser = objCurrentUser.Description
 		strProject = objCurrentProject.Name & " " & objCurrentProject.Description
 		strOverlay = ""
 		If Not objCurrentOverlay Is Nothing Then
