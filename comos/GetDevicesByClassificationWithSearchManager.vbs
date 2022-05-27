@@ -7,7 +7,7 @@ Set colDevices = GetDevicesByCDevicesWithScanManager(a, colCDevices)
 Output colDevices.count
 
 Function GetDevicesByCDevicesWithScanManager(objStart, colCDevices)
-' DESCRIPTION : uses scan manager to get collection of objects under a root node with certain cdevices - UNTESTED
+' DESCRIPTION : uses scan manager to get collection of objects under a root node with certain cdevices
 
 ' SCRIPT REVISIONS :
 ' (1) 20-May-2022: renamed function
