@@ -7,7 +7,8 @@ Function OpenQueryWindow(objQuery)
    
 ' SCRIPT REVISIONS :
 ' (1) 18-May-2022 : created
-   
+' (2) 27-May-2022 : removed check for systemtype, successfully tested
+	
 ' INPUT :
 ' (1) objQuery: query - [comos object]
    
@@ -17,7 +18,6 @@ Function OpenQueryWindow(objQuery)
 	OpenQueryWindow = false
    
 	If objQuery Is Nothing Then Exit Function
-	If objQuery.SystemType <> 2 Then Exit Function
    
 	Set ws = Project.Workset
 	controlName = ws.Lib.Device.GetClassicTQBProgIdByControlType(ws.Lib.Device.GetControlType(objQuery))
