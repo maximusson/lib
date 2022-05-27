@@ -8,11 +8,12 @@ Sub Action(Query, QueryBrowser)
 End Sub
 
 Function ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
-' DESCRIPTION: exports visible data from COMOS query to new excel file. If file already exists, COMOS cancels export
+' DESCRIPTION: exports visible data from COMOS query to a new excel file. If file already exists, COMOS cancels export
 
 ' SCRIPT REVISIONS :
 ' (1) 01-May-2022 : created
 ' (2) 19-May-2022 : beautify script
+' (3) 27-May-2022 : added function CreateNewExcelFile(), script tested and working
 	
 ' INPUT :
 ' (1) Query: query from action function - [comos query object]
@@ -27,7 +28,11 @@ Function ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 	Set fso = CreateObject("Scripting.FileSystemObject")
 	If strExcelPath = "" Then Exit Function
 	If strSheetName = "" Then Exit Function
-	If fso.FileExists(strExcelPath) = false Then Exit Function
+	If fso.FileExists(strExcelPath) = true Then Exit Function
+	
+	' create excel file
+	bCreated = CreateNewExcelFile(strExcelPath)
+	If bCreated = false Then Exit Function
 	
 	' open excel file
 	Set excelApp = CreateObject("Excel.Application")
@@ -75,4 +80,56 @@ Function ActionQueryExportToExcelFile(Query, strExcelPath, strSheetName)
 
 	ActionQueryExportToExcelFile = true	
 	
+End Function
+
+Function CreateNewExcelFile(strExcelPath)
+' DESCRIPTION : creates new excel file if file is not existing and folderpath valid
+
+' SCRIPT REVISIONS :
+' (1) 19-May-2022 : created
+
+' INPUT :
+' (1) strExcelPath: new path for excel file - [string]
+
+' OUTPUT :
+' (1) CreateNewExcelFile: returns true if script ran completely [boolean]
+	
+	CreateNewExcelFile = false
+	
+	If strExcelPath = "" Then Exit Function
+	If IsFilepathUniqueAndFolderpathValid(strExcelPath) = false Then Exit Function
+
+	Set objExcel = CreateObject("Excel.Application")
+	objExcel.Application.DisplayAlerts = False
+	Set objWorkbook = objExcel.workbooks.add()
+	objWorkbook.SaveAs strExcelPath
+	objWorkbook.Close
+	objExcel.Workbooks.Close
+	objExcel.Quit
+	Set objExcel = Nothing 
+
+	CreateNewExcelFile = true				
+				
+End Function
+
+Function IsFilepathUniqueAndFolderpathValid(strFilepath)
+' DESCRIPTION: checks if filepath is unique. scripts is cancelled if file already exists.
+' checks if folder exists. scripts is cancelled if folder does not exist
+	
+	IsFilepathUniqueAndFolderpathValid = False
+	
+	Set FSO = CreateObject("Scripting.FileSystemObject")
+	
+	' Check if file exists, exit function if true
+	If FSO.FileExists(strFilepath) Then Exit Function
+	
+	' Check if folder exists, exit function if false
+	arrStr = split(strFilepath, "\")
+	If UBound(arrStr) = 0 Then Exit Function
+	
+	strFolderpath = Left(strFilepath, Len(strFilepath) - Len(arrStr(UBound(arrStr))))
+	If FSO.FolderExists(strFolderpath) = False Then Exit Function
+	
+	IsFilepathUniqueAndFolderpathValid = True
+		
 End Function
