@@ -1,24 +1,24 @@
 ' EXAMPLE :
-colSystemType = Project.CDevices
-strSystemFullname = "@Y|A10|A20"
-objComos = GetObjectBySystemfullname(colSystemType, strSystemFullname)
+strSystemFullname = b.systemfullname
+Set objComos = GetCDeviceBySystemfullname(strSystemFullname)
+Output objComos.Systemfullname
 
-Function GetObjectBySystemfullname(colSystemType, strSystemFullname)
-' DESCRIPTION : returns object via load object by type - UNTESTED
+Function GetCDeviceBySystemfullname(strSystemFullname)
+' DESCRIPTION : returns cdevice by systemfullname
 
 ' SCRIPT REVISIONS :
 ' (1) 19-May-2022 : created
+' (2) 27-May-2022 : function renamed, only works for CDevices, successfully tested
 
 ' INPUT :
-' (1) colSystemType: type of comos collection, Project.CDevices or Project.Devices - [collection]
-' (2) strSystemFullname: systemfullname of object - [string]
+' (1) strSystemFullname: systemfullname of object - [string]
 
 ' OUTPUT :
-' (1) GetObjectBySystemfullname: returns comos object [comos object]
+' (1) GetCDeviceBySystemfullname: returns comos object [comos object]
 	
-	Set GetObjectBySystemfullname = Nothing
+	Set GetCDeviceBySystemfullname = Nothing
 	If strSystemFullname = "" then Exit Function
 	
-	Set GetObjectBySystemfullname = Project.GetHierarchyObjectByName(colSystemType, strSystemFullname)
+	Set GetCDeviceBySystemfullname = Project.GetHierarchyObjectByName(Project.CDevices, strSystemFullname)
 
 End Function
