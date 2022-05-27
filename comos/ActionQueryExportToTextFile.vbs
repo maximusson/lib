@@ -12,6 +12,7 @@ Function ActionQueryExportToTextFile(Query, strExportPath)
 ' SCRIPT REVISIONS :
 ' (1) 01-May-2022 : created
 ' (2) 19-May-2022 : beautify script, changed sub to function
+' (3) 27-May-2022 : renamed stream to objStream	(scripting convention)
 	
 ' INPUT :
 ' (1) Query: query from action function - [comos query object]
@@ -66,14 +67,14 @@ Function ActionQueryExportToTextFile(Query, strExportPath)
 	strData = strHeader & strBody
 
 	' create file, write data, close file
-	Set stream = CreateObject("ADODB.Stream")
-	stream.Open
-	stream.Type = 2     'text
-	stream.Position = 0
-	stream.Charset = "utf-8"
-	stream.WriteText strData
-	stream.SaveToFile strExportPath, 2
-	stream.Close
+	Set objStream = CreateObject("ADODB.Stream")
+	objStream.Open
+	objStream.Type = 2     'text
+	objStream.Position = 0
+	objStream.Charset = "utf-8"
+	objStream.WriteText strData
+	objStream.SaveToFile strExportPath, 2
+	objStream.Close
 
 	ActionQueryExportToTextFile = true
 				
