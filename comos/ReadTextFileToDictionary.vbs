@@ -2,7 +2,7 @@
 strTextFilePath = "C:/test.txt"
 Set dict = ReadTextFileToDictionary(strTextFilePath)
 For i = 1 to dict.Count
-	output dict(i)	
+	Output dict(1)	
 Next
 
 Function ReadTextFileToDictionary(strTextFilepath)
@@ -17,7 +17,6 @@ Function ReadTextFileToDictionary(strTextFilepath)
 ' OUTPUT :
 	' (1) ReadTextFileToDictionary: returns dictionary with content of textfile [dictionary object]
 
-
 	Set dict = CreateObject("Scripting.Dictionary")
 	Set ReadTextFileToDictionary = dict
 
@@ -28,7 +27,7 @@ Function ReadTextFileToDictionary(strTextFilepath)
 	intRow = 0
 	Do Until objFile.AtEndOfStream
 		strLine = objFile.Readline
-		row = row + 1
+		intRow = intRow + 1
 		dict.Add intRow, strLine
 	Loop
 	objFile.Close
