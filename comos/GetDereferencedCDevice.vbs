@@ -7,6 +7,7 @@ Function GetDereferencedCDevice(objComos)
 
 ' VERSIONS:
 ' (1) 18-May-2022 : created
+' (2) 27-May-2022 : successfully tested
 
 ' INPUTS:
 ' (1) objComos: comos object of systemtype 8 or 13 [comos object]
