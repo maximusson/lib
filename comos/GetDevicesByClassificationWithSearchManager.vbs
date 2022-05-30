@@ -9,7 +9,7 @@ Function GetDevicesByClassificationWithSearchManager(objStart, strClassification
 ' (1) 26-Nov-2020 : created
 ' (2) 19-May-2022: beautify script
 ' (3) 20-May-2022: renamed function
-	' (4) 30-May-2022: function restored (accidentally overriden)
+' (4) 30-May-2022: function restored (accidentally overriden)
 	
 ' INPUT :
 ' (1) objStart: object from comos tree - [comos object]
