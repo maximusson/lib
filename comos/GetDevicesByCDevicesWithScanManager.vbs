@@ -38,7 +38,6 @@ Function GetDevicesByCDevicesWithScanManager(objStart, colCDevices)
 		If Not objCDevice Is Nothing Then 
 			If objCDevice.SystemType = 13 Then
 				scanManager.CObjects.Append objCDevice
-				Output "here"
 			End If
 		End If
 	Next
