@@ -40,6 +40,7 @@ For i = 0 To objDocRep.ItemCount - 1
 	Set ISymbolScript = GC.GC_GetISymbolScript(objDocRepItem)
 	If Not ISymbolScript Is Nothing Then
 		output "locally changed: " & ISymbolScript.IsSymbolScriptLocal
+		output "symbol script: " & ISymbolScript.SymbolScript
 	End If
 	
 	Output ""
