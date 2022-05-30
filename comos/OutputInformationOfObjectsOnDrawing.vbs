@@ -36,6 +36,12 @@ For i = 0 To objDocRep.ItemCount - 1
 		output "cdevice: " & objRoDevice.CDeviceFullname 
 	End If
 	
+	' is symbolscript locally changed
+	Set ISymbolScript = GC.GC_GetISymbolScript(objDocRepItem)
+	If Not ISymbolScript Is Nothing Then
+		output "locally changed: " & ISymbolScript.IsSymbolScriptLocal
+	End If
+	
 	Output ""
 	
 Next
