@@ -1,48 +1,38 @@
 ' EXAMPLE :
-Set colCDevices = Project.Workset.GetTempCollection
-colCDevices.add b
-Output colCDevices.count
+Set colDevs = GetDevicesByClassificationWithSearchManager(a, "4", "A10.A20")
+Output colDevs.count
 
-Set colDevices = GetDevicesByCDevicesWithScanManager(a, colCDevices)
-Output colDevices.count
-
-Function GetDevicesByCDevicesWithScanManager(objStart, colCDevices)
-' DESCRIPTION : uses scan manager to get collection of objects under a root node with certain cdevices
+Function GetDevicesByClassificationWithSearchManager(objStart, strClassificationKey, strClassificationSearchString)
+' DESCRIPTION : uses search manager to get collection of objects under a root node
 
 ' SCRIPT REVISIONS :
-' (1) 20-May-2022: renamed function
-' (2) 25-May-2022: bug fixing, successfully tested
-
+' (1) 26-Nov-2020 : created
+' (2) 19-May-2022: beautify script
+' (3) 20-May-2022: renamed function
+	' (4) 30-May-2022: function restored (accidentally overriden)
+	
 ' INPUT :
 ' (1) objStart: object from comos tree - [comos object]
-' (2) colCDevices: collection of cdevices [comos collection - project.workset.gettempcollection]
+' (2) strClassificationKey: key for classification (1, 2, 3 or 4) [string]
+' (3) strClassificationSearchString: classification string - [string]
 
 ' OUTPUT :
-' (1) GetDevicesByCDevicesWithScanManager: returns collection of found objects  [collection]
-	
+' (1) GetDevicesByClassificationWithSearchManager: returns collection of found objects  [collection]
+
 	Set ws = Project.Workset
-	Set GetDevicesByCDevicesWithScanManager = ws.GetTempCollection
-	
+
+	Set SearchManagerGetDevicesByClassification = ws.GetTempCollection
 	If objStart Is Nothing Then Exit Function
-	If colCDevices.count = 0 Then Exit Function
-	
-	Set scanManager = ws.GetScanManager
-	
-	scanManager.root = objStart
-	scanManager.Recursive = True
-	scanManager.IncludeRoot = False
-	scanManager.SystemType = 8
-    
-	For i = 1 To colCDevices.count
-		Set objCDevice = colCDevices.item(i)
-		If Not objCDevice Is Nothing Then 
-			If objCDevice.SystemType = 13 Then
-				scanManager.CObjects.Append objCDevice
-				Output "here"
-			End If
-		End If
-	Next
-    
-	Set GetDevicesByCDevicesWithScanManager = ws.Scan(scanManager)
+     
+	Set searchManager = ws.GetSearchManager
+	Set rootObjects = searchManager.RootObjects
+	rootObjects.add objStart
+	searchManager.SystemType = 8
+	searchManager.AppendSearchCondition "","CLASSIFICATION",strClassificationKey,"LIKE", strClassificationSearchString
+
+	Set resultSet = searchManager.Start
+	searchManager.RetrieveData(0)
+	searchManager.Stop
+	Set GetDevicesByClassificationWithSearchManager = resultSet
        
 End Function
