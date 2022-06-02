@@ -18,6 +18,6 @@ Function MAX_Mid(rngInput, intStartCharacter, intLength)
 	MAX_Mid = ""
 	If rngInput.Cells.Count <> 1 Then Exit Function
 
-    MAX_Mid = Mid(rngInput.Cells.Item(1).Text, intStartCharacter, intLength)
+	MAX_Mid = Mid(rngInput.Cells.Item(1).Text, intStartCharacter, intLength)
 
 End Function
