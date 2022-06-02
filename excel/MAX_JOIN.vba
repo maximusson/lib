@@ -1,4 +1,7 @@
-Function MAX_JOIN(rngInput, strSeparator)
+' EXAMPLE :
+=MAX_Join(A1:A4;"-")
+
+Function MAX_Join(rngInput, strSeparator)
 ' DESCRIPTION : joins text with separator
 
 ' SCRIPT REVISIONS :
@@ -9,18 +12,16 @@ Function MAX_JOIN(rngInput, strSeparator)
 ' (2) strSeparator: string between [string]
 
 ' OUTPUT :
-' (1) MAX_JOIN: concatenated string with separator [string]
+' (1) MAX_Join: concatenated string with separator [string]
 
-    MAX_JOIN = ""
-    intCount = 0
-    For Each objCell In rngInput.Cells
-        strText = objCell.Text
-        MAX_JOIN = MAX_JOIN & strText & strSeparator
-        intCount = intCount + 1
-    Next
+	MAX_Join = ""
+	If rngInput.Cells.Count = 0 Then Exit Function
     
-    If intCount = 0 Then Exit Function
+	For Each objCell In rngInput.Cells
+		strText = objCell.Text
+ 		MAX_Join = MAX_Join & strText & strSeparator
+	Next
     
-    MAX_JOIN = Left(MAX_JOIN, Len(MAX_JOIN) - Len(strSeparator))
+	MAX_Join = Left(MAX_Join, Len(MAX_Join) - Len(strSeparator))
     
 End Function
