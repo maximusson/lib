@@ -15,9 +15,9 @@ Function MAX_Mid(rngInput, intStartCharacter, intLength)
 ' OUTPUT :
 ' (1) MAX_Mid : replaced value
 
-	For Each objCell In rngInput.Cells
-		MAX_Mid = Mid(objCell.Text, intStartCharacter, intLength)
-		Exit Function
-	Next
+	MAX_Mid = ""
+	If rngInput.Cells.Count <> 1 Then Exit Function
+
+    MAX_Mid = Mid(rngInput.Cells.Item(1).Text, intStartCharacter, intLength)
 
 End Function
