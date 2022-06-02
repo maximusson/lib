@@ -9,7 +9,7 @@ Function MAX_Mid(rngInput, intStartCharacter, intLength)
    
 ' INPUT :
 '( 1) rngInput : range object from Excel [rng object]
-' (2) intFrom : starting position [integer]
+' (2) intStartCharacter : starting position [integer]
 ' (3) intLength : ending position [integer]
 
 ' OUTPUT :
