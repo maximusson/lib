@@ -1,7 +1,7 @@
 ' EXAMPLE :
-=MAX_MID(A2, 3, 5)
+=MAX_Mid(A2, 3, 5)
 
-Function MAX_MID(rngInput, intStartCharacter, intLength)
+Function MAX_Mid(rngInput, intStartCharacter, intLength)
 ' DESCRIPTION : implements mid function for spreadsheet. left and right function already exists
 
 ' SCRIPT REVISIONS :
@@ -13,10 +13,10 @@ Function MAX_MID(rngInput, intStartCharacter, intLength)
 ' (3) intLength : ending position [integer]
 
 ' OUTPUT :
-' (1) MAX_MID : replaced value
+' (1) MAX_Mid : replaced value
 
 	For Each objCell In rngInput.Cells
-		MAX_MID = Mid(objCell.Text, intStartCharacter, intLength)
+		MAX_Mid = Mid(objCell.Text, intStartCharacter, intLength)
 		Exit Function
 	Next
 
