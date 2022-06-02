@@ -22,7 +22,7 @@ Function MAX_Split(rngInput, strSeparator, intPosition)
 
 	arrStr = Split(rngInput.Cells.Item(1).Text, strSeparator)
 	If UBound(arrStr) + 1 >= intPosition Then
-		MAX_SPLIT = arrStr(intPosition - 1)
+		MAX_Split = arrStr(intPosition - 1)
 	End If
 
 End Function
