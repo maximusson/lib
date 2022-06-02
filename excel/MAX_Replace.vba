@@ -1,5 +1,5 @@
 ' EXAMPLE :
-=MAX_REPLACE(A2, "-", ".")
+=MAX_Replace(A2, "-", ".")
 
 Function MAX_Replace(rngInput, strSearchString, strReplaceString)
 ' DESCRIPTION : replaces a part of a string with another string
