@@ -2,11 +2,12 @@
 Call ProgressBar()
 
 Sub ProgressBar()
-' DESCRIPTION: example script for usage of progressbar
+' DESCRIPTION: example script for usage of progressbar - UNTESTED
   
 ' REVISION:
 ' (1) 03-Nov-2021 : created
 ' (2) 19-May-2022 : beautify script
+' (3) 15-Jun-2022 : typo corrected
 	
 ' INPUTS:
 ' () 
@@ -28,7 +29,7 @@ Sub ProgressBar()
 		' do stuff
     
 		' update progressbar
-		If objBrogressbar.State = 3 Then Exit Sub
+		If objProgressbar.State = 3 Then Exit Sub
 		objProgressBar.Percentage = Round(i / intCount * 100)	
 		
 	Next
