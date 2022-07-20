@@ -74,7 +74,7 @@ Function WriteLogToFile(strLogFilePath, intOption, strActionTitle, strMessage, o
 			strOverlay
         
 		Set objFile = fso.OpenTextFile(strLogFilePath, 8)
-		objFile.WriteLine strDate
+		objFile.WriteLine strData
 		objFile.Close
         
 	Case Else
