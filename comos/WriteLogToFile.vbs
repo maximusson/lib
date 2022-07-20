@@ -11,7 +11,8 @@ Function WriteLogToFile(strLogFilePath, intOption, strActionTitle, strMessage, o
 
 ' SCRIPT REVISIONS :
 ' (1) 20-May-2022 : created
-' (20) 23-May-2022 : corrected spelling mistake decrption -> description
+' (2) 23-May-2022 : corrected spelling mistake decrption -> description
+' (3) 20-Jul-2022 : corrected concatenated text (do not use replace, just join strings)
 
 ' INPUT :
 ' (1) strLogFilePath: path for new logfile - [string]
@@ -60,14 +61,17 @@ Function WriteLogToFile(strLogFilePath, intOption, strActionTitle, strMessage, o
 			strSystemfullname = objComos.Systemfullname
 		End If
         
-		strData = Replace(strData, "date", Year(Now) & "-" & Right("00" & Month(Now), 2) & "-" & Right("00" & Day(Now), 2)) & vbTab & _
-		Replace(strData, "time", Right("00" & Hour(Now), 2) & ":" & Right("00" & Minute(Now), 2) & ":" & Right("00" & Second(Now), 2)) & vbTab & _
-		Replace(strData, "action", strActionTitle) & vbTab & _
-		Replace(strData, "message", strMessage) & vbTab & _
-		Replace(strData, "object systemfullname", "strSystemfullname") & vbTab & _
-		Replace(strData, "user", "strUser") & vbTab & _
-		Replace(strData, "project", "strProject") & vbTab & _
-		Replace(strData, "overlay", "strOverlay")
+		strDate = Year(Now) & "-" & Right("00" & Month(Now), 2) & "-" & Right("00" & Day(Now), 2)
+		strTime = Right("00" & Hour(Now), 2) & ":" & Right("00" & Minute(Now), 2) & ":" & Right("00" & Second(Now), 2)
+				
+		strData = strDate & vbTab & _
+			strTime & vbTab & _
+			strActionTitle & vbTab & _
+			strMessage & vbTab & _
+			strSystemfullname & vbTab & _
+			strUser & vbTab & _
+			strProject & vbTab & _
+			strOverlay
         
 		Set objFile = fso.OpenTextFile(strLogFilePath, 8)
 		objFile.WriteLine strDate
