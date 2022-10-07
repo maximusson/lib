@@ -36,3 +36,17 @@ Function GetCollectionOfQueryMainObjects(objStart)
 	Err.Clear
 
 End Function
+
+	
+' untested
+Sub Action(Query, QueryBrowser)
+	Set oQMain = TopQuery.MainObject
+	If Not oQMain Is Nothing Then
+		Set oCollQMain = WorkSet.Lib.Device.GetTmpCollection(oQMain, Nothing)
+		For i = 1 To oCollQMain.Count
+			Set oQMainItem = oCollQMain.Item(i)
+			vStartObj = vStartObj & " " & oQMainItem.Fulllabel
+		Next
+	End If
+	msgbox vStartObj
+End Sub
