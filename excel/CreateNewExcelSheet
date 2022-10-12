@@ -1,0 +1,15 @@
+Function CreateNewExcelSheet(strSheetName)
+    
+    For Each Sheet In Sheets
+        If Sheet.Name = strSheetName Then
+            Application.DisplayAlerts = False
+            Sheet.Delete
+            Application.DisplayAlerts = True
+        End If
+    Next
+    
+    Sheets.Add(, Sheets(Sheets.Count)).Name = strSheetName
+    
+    Set CreateNewExcelSheet = Sheets(strSheetName)
+                
+End Function
