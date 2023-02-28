@@ -11,6 +11,7 @@ Function MergePdfFiles(listFilepaths, strFilepath)
 ' VERSIONS:
 ' (1) 18-May-2022 : created
 ' (2) 19-May-2022 : beautify script
+' (3) 28-Feb-2023 : corrected quickPdf -> to objQuickPdf
 	
 ' INPUTS:
 ' (1) listFilepaths: arraylist of filepaths [arraylist] - CreateObject("System.Collections.Arraylist")
@@ -21,8 +22,8 @@ Function MergePdfFiles(listFilepaths, strFilepath)
 
 	MergePdfFiles = false
 
-	Set quickPdf = CreateObject("QuickPDFAX0812.PDFLibrary")
-	quickPDF.UnlockKey("jt9593uh8eh5ai4cu9b36hb5y")
+	Set objQuickPdf = CreateObject("QuickPDFAX0812.PDFLibrary")
+	objQuickPDF.UnlockKey("jt9593uh8eh5ai4cu9b36hb5y")
 	strFileListName = "FilesToMerge"
 	objQuickPdf.ClearFileList fileListName
 	
