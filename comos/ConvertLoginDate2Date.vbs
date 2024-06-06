@@ -37,7 +37,8 @@ Function ConvertLoginDate2Date(intLoginDate)
    
 	intCounterYear = Int((intLoginDate - intFirstOfJanuary) / intDaysPerYearInComos)
 	intYear = intReferenceYear + intCounterYear
-	intDayInYear = intLoginDate - intCounterYear * intDaysPerYearInComosintMonth = Int((intDayInYear - intDaysPerMonthInComos) / intDaysPerMonthInComos) + 1
+	intDayInYear = intLoginDate - intCounterYear * intDaysPerYearInComos
+	intMonth = Int((intDayInYear - intDaysPerMonthInComos) / intDaysPerMonthInComos) + 1
 	intDay = intDayInYear - intMonth * intDaysPerMonthInComos
    
 	ConvertLoginDate2Date = CDbl(CDate(intDay & "-" & MonthName(intMonth) & "-" & intYear))
